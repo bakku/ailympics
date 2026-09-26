@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shelfie — track, review and share your reading</title>
+<meta name="description" content="Shelfie is a self-hosted reading tracker: shelves, reviews, reading goals and a feed of what your friends are reading.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#1f6f4a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231f6f4a'/%3E%3Cpath d='M8 8h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H8z' fill='%23faf7f2'/%3E%3Cpath d='M24 8h-7a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z' fill='%23e6c9a0'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="topbar" role="banner">
+  <div class="topbar__inner">
+    <button class="icon-btn topbar__burger" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <a class="brand" href="#/" aria-label="Shelfie home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M5 5h8a2 2 0 0 1 2 2v20a2 2 0 0 0-2-2H5z"/><path d="M27 5h-8a2 2 0 0 0-2 2v20a2 2 0 0 1 2-2h8z" class="brand__mark-b"/></svg>
+      </span>
+      <span class="brand__name">Shelfie</span>
+    </a>
+
+    <form class="searchbar" id="globalSearch" role="search" autocomplete="off">
+      <svg class="searchbar__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+      <input class="searchbar__input" id="searchInput" type="search" name="q" placeholder="Search books, authors, ISBN…" aria-label="Search books, authors and ISBN" enterkeyhint="search">
+      <button class="searchbar__clear" id="searchClear" type="button" aria-label="Clear search" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </form>
+
+    <div class="topbar__actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Switch to dark theme" title="Toggle theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.2 8.2 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg>
+      </button>
+      <button class="icon-btn has-dot" id="notifBtn" aria-label="Notifications" title="Notifications">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 10a5.5 5.5 0 0 1 11 0c0 4 1.5 5.5 1.5 5.5H5S6.5 14 6.5 10z"/><path d="M10 19a2.2 2.2 0 0 0 4 0"/></svg>
+      </button>
+      <button class="btn btn--primary topbar__add" id="quickAdd" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <span>Add a book</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <nav class="nav" id="mainNav"></nav>
+
+    <div class="sidebar__section">
+      <h2 class="sidebar__heading">My shelves</h2>
+      <nav class="shelf-nav" id="shelfNav"></nav>
+      <a class="shelf-nav__add" href="#/my-books">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        New shelf
+      </a>
+    </div>
+
+    <div class="sidebar__section">
+      <h2 class="sidebar__heading">Browse</h2>
+      <nav class="nav nav--compact" id="browseNav"></nav>
+    </div>
+
+    <div class="goal-card" id="goalCard"></div>
+
+    <footer class="sidebar__foot">
+      <p>Shelfie · self-hosted reading tracker</p>
+      <p class="muted">All data on this demo is mocked.</p>
+    </footer>
+  </aside>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+
+<nav class="tabbar" id="tabbar" aria-label="Primary">
+  <a class="tabbar__item" href="#/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6 8 6"/><path d="M6.5 9.8V19h11V9.8"/><path d="M10 19v-5h4v5"/></svg>
+    <span>Home</span>
+  </a>
+  <a class="tabbar__item" href="#/discover">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+    <span>Discover</span>
+  </a>
+  <button class="tabbar__item tabbar__fab" id="tabbarAdd" type="button" aria-label="Add a book">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+  <a class="tabbar__item" href="#/my-books">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h7v13H4zM13 6h7v13h-7z"/></svg>
+    <span>My books</span>
+  </a>
+  <a class="tabbar__item" href="#/profile/u-me">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.5"/><path d="M5 19.5c1.2-3.3 3.8-5 7-5s5.8 1.7 7 5"/></svg>
+    <span>Profile</span>
+  </a>
+</nav>
+
+<div class="modal-root" id="modalRoot"></div>
+<div class="toast-root" id="toastRoot" role="status" aria-live="polite"></div>
+<div class="suggest-root" id="suggestRoot"></div>
+
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/views.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
