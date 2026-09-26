@@ -9,7 +9,6 @@ This result is a responsive, mocked reading tracker built with HTML, CSS, and Ja
 | Model | `opencode-go/space-bunny-free` |
 | Variant | `max` |
 | Harness | T3 Code through OpenCode 1.18.30 |
-| OpenCode session | `ses_f20702668ffenO6imB622MVjLz` |
 | Started | 2026-09-26 21:12:21 UTC |
 | Finished | 2026-09-26 21:41:56 UTC |
 | Elapsed time | 29m 34s |
