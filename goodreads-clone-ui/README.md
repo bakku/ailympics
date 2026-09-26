@@ -12,3 +12,9 @@ This test asks a model to turn a short product brief into a responsive frontend 
 - Whether the delivered files can be inspected and run locally.
 
 The prompt leaves the feature set and visual direction open so each model's choices are part of the result.
+
+## Results
+
+| Model | Result |
+| --- | --- |
+| OpenCode Go / Space Bunny Free (`max`) | [Shelfie frontend](opencode-go-space-bunny-free/) |
