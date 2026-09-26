@@ -2,6 +2,12 @@
 
 Ailympics checks what AI models can do with a set of practical prompts. Each test preserves the work a model produced and the conditions under which it produced it, so results can be explored and compared as the prompts and models change.
 
+## Tests
+
+| Test | Focus |
+| --- | --- |
+| [Goodreads clone UI](goodreads-clone-ui/) | Responsive, self-hosted book app interface with mocked data and behavior |
+
 ## Repository layout
 
 Each top-level directory is one test:
