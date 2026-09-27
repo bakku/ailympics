@@ -19,3 +19,4 @@ The prompt leaves the feature set and visual direction open so each model's choi
 | --- | --- |
 | OpenCode Go / Space Bunny Free (`max`) | [Shelfie frontend](opencode-go-space-bunny-free/) |
 | OpenAI / GPT-6 Sol (`max`) | [Margins frontend](openai-gpt-6-sol/) |
+| OpenCode Go / LongCat 2.5 Preview Free (`high`) | [BookNest frontend](opencode-go-longcat-2.5-preview-free/) |

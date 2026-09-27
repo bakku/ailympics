@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookNest — Your Reading Companion</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <a href="#" class="logo" onclick="app.navigate('home')">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          <span>BookNest</span>
+        </a>
+
+        <nav class="nav-desktop">
+          <a href="#" class="nav-link active" data-page="home" onclick="app.navigate('home')">Home</a>
+          <a href="#" class="nav-link" data-page="mybooks" onclick="app.navigate('mybooks')">My Books</a>
+          <a href="#" class="nav-link" data-page="browse" onclick="app.navigate('browse')">Browse</a>
+          <a href="#" class="nav-link" data-page="community" onclick="app.navigate('community')">Community</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Search books, authors..." oninput="app.handleSearch(this.value)">
+          </div>
+          <button class="icon-btn" id="themeToggle" onclick="app.toggleTheme()" aria-label="Toggle theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <div class="user-avatar" onclick="app.navigate('profile')">JD</div>
+          <button class="hamburger" id="hamburger" onclick="app.toggleMobileMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#" class="nav-link active" data-page="home" onclick="app.navigate('home')">Home</a>
+        <a href="#" class="nav-link" data-page="mybooks" onclick="app.navigate('mybooks')">My Books</a>
+        <a href="#" class="nav-link" data-page="browse" onclick="app.navigate('browse')">Browse</a>
+        <a href="#" class="nav-link" data-page="community" onclick="app.navigate('community')">Community</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="mainContent">
+      <!-- Home Page -->
+      <div class="page active" id="page-home">
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-content">
+            <h1>Discover Your Next<br><em>Great Read</em></h1>
+            <p>Track what you're reading, discover new books, and connect with a community of book lovers.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" onclick="app.navigate('browse')">Browse Books</button>
+              <button class="btn btn-outline" onclick="app.navigate('mybooks')">My Library</button>
+            </div>
+          </div>
+          <div class="hero-books">
+            <div class="hero-book" style="--delay:0s;--x:-120px;--y:20px;--r:-12deg">
+              <div class="book-cover" style="--c1:#667eea;--c2:#764ba2">The Midnight Library</div>
+            </div>
+            <div class="hero-book" style="--delay:0.2s;--x:0px;--y:-10px;--r:0deg">
+              <div class="book-cover" style="--c1:#f093fb;--c2:#f5576c">Atomic Habits</div>
+            </div>
+            <div class="hero-book" style="--delay:0.4s;--x:120px;--y:20px;--r:12deg">
+              <div class="book-cover" style="--c1:#4facfe;--c2:#00f2fe">Project Hail Mary</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Currently Reading -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Currently Reading</h2>
+            <a href="#" class="section-link" onclick="app.navigate('mybooks')">View all &rarr;</a>
+          </div>
+          <div class="book-row" id="currentlyReading"></div>
+        </section>
+
+        <!-- Popular This Week -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Popular This Week</h2>
+            <a href="#" class="section-link" onclick="app.navigate('browse')">Browse all &rarr;</a>
+          </div>
+          <div class="book-grid" id="popularBooks"></div>
+        </section>
+
+        <!-- New Releases -->
+        <section class="section">
+          <div class="section-header">
+            <h2>New Releases</h2>
+            <a href="#" class="section-link" onclick="app.navigate('browse')">See more &rarr;</a>
+          </div>
+          <div class="book-row" id="newReleases"></div>
+        </section>
+
+        <!-- Reading Challenge -->
+        <section class="section">
+          <div class="challenge-card">
+            <div class="challenge-info">
+              <h2>2026 Reading Challenge</h2>
+              <p>You've read <strong>12</strong> of <strong>24</strong> books this year!</p>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:50%"></div>
+              </div>
+              <span class="progress-label">50% complete</span>
+            </div>
+            <div class="challenge-stats">
+              <div class="stat">
+                <span class="stat-num">12</span>
+                <span class="stat-label">Books Read</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">3,842</span>
+                <span class="stat-label">Pages</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">4.2</span>
+                <span class="stat-label">Avg Rating</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- My Books Page -->
+      <div class="page" id="page-mybooks">
+        <div class="page-header">
+          <h1>My Books</h1>
+          <div class="shelf-tabs">
+            <button class="shelf-tab active" data-shelf="all" onclick="app.filterShelf('all')">All</button>
+            <button class="shelf-tab" data-shelf="read" onclick="app.filterShelf('read')">Read</button>
+            <button class="shelf-tab" data-shelf="currently-reading" onclick="app.filterShelf('currently-reading')">Currently Reading</button>
+            <button class="shelf-tab" data-shelf="want-to-read" onclick="app.filterShelf('want-to-read')">Want to Read</button>
+          </div>
+        </div>
+        <div class="my-books-layout">
+          <aside class="shelf-sidebar">
+            <h3>Shelves</h3>
+            <ul class="shelf-list" id="shelfList"></ul>
+          </aside>
+          <div class="shelf-content">
+            <div class="book-grid" id="myBooksGrid"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Browse Page -->
+      <div class="page" id="page-browse">
+        <div class="page-header">
+          <h1>Browse Books</h1>
+          <div class="browse-filters">
+            <select class="filter-select" id="genreFilter" onchange="app.filterByGenre(this.value)">
+              <option value="all">All Genres</option>
+              <option value="fiction">Fiction</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="sci-fi">Sci-Fi</option>
+              <option value="mystery">Mystery</option>
+              <option value="romance">Romance</option>
+              <option value="non-fiction">Non-Fiction</option>
+              <option value="biography">Biography</option>
+              <option value="self-help">Self-Help</option>
+            </select>
+            <select class="filter-select" id="sortFilter" onchange="app.sortBooks(this.value)">
+              <option value="popular">Most Popular</option>
+              <option value="rating">Highest Rated</option>
+              <option value="newest">Newest</option>
+              <option value="title">Title A-Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="book-grid" id="browseGrid"></div>
+      </div>
+
+      <!-- Community Page -->
+      <div class="page" id="page-community">
+        <div class="page-header">
+          <h1>Community</h1>
+        </div>
+        <div class="community-layout">
+          <div class="community-feed" id="communityFeed"></div>
+          <aside class="community-sidebar">
+            <div class="sidebar-card">
+              <h3>Reading Groups</h3>
+              <ul class="group-list">
+                <li><span class="group-name">Sci-Fi Book Club</span><span class="group-members">1.2k members</span></li>
+                <li><span class="group-name">Fantasy Readers</span><span class="group-members">3.4k members</span></li>
+                <li><span class="group-name">Non-Fiction Nation</span><span class="group-members">892 members</span></li>
+                <li><span class="group-name">Mystery Lovers</span><span class="group-members">2.1k members</span></li>
+              </ul>
+            </div>
+            <div class="sidebar-card">
+              <h3>Top Reviewers</h3>
+              <ul class="reviewer-list">
+                <li><span class="reviewer-avatar">SK</span><span class="reviewer-name">Sarah K.</span><span class="reviewer-count">847 reviews</span></li>
+                <li><span class="reviewer-avatar">MR</span><span class="reviewer-name">Mike R.</span><span class="reviewer-count">623 reviews</span></li>
+                <li><span class="reviewer-avatar">AL</span><span class="reviewer-name">Anna L.</span><span class="reviewer-count">512 reviews</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- Profile Page -->
+      <div class="page" id="page-profile">
+        <div class="profile-header">
+          <div class="profile-avatar">JD</div>
+          <div class="profile-info">
+            <h1>Jane Doe</h1>
+            <p>Book lover, coffee enthusiast, and lifelong reader.</p>
+            <div class="profile-stats">
+              <span><strong>142</strong> books read</span>
+              <span><strong>89</strong> reviews</span>
+              <span><strong>23</strong> friends</span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-content">
+          <section class="section">
+            <h2>Reading Activity</h2>
+            <div class="activity-list" id="activityList"></div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Search Results -->
+      <div class="page" id="page-search">
+        <div class="page-header">
+          <h1>Search Results</h1>
+          <p id="searchQuery"></p>
+        </div>
+        <div class="book-grid" id="searchResults"></div>
+      </div>
+    </main>
+
+    <!-- Book Detail Modal -->
+    <div class="modal-overlay" id="bookModal" onclick="app.closeModal(event)">
+      <div class="modal" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="app.closeModal()">&times;</button>
+        <div class="modal-body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
