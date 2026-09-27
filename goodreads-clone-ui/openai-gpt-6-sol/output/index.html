@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f3" />
+    <meta name="description" content="Margins is a calm, personal home for your books and reading goals." />
+    <title>Margins — your reading space</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.2C9.4 4.6 6.3 4.3 3 5v13c3.3-.7 6.4-.4 9 1.2 2.6-1.6 5.7-1.9 9-1.2V5c-3.3-.7-6.4-.4-9 1.2Z"/><path d="M12 6.2v13"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-7h6v7"/></symbol>
+      <symbol id="i-library" viewBox="0 0 24 24"><path d="M4 4v16M9 4v16M14 5l3.2 15M4 4h5v16H4zM9 4h5v16H9zM15 5l4-1 3 16-4 1z"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.7 2.9 6 6.6 1-4.8 4.6 1.1 6.6-5.8-3.1-5.8 3.1 1.1-6.6-4.8-4.6 6.6-1 2.9-6Z"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 2 1.9 7.1L21 11l-7.1 1.9L12 20l-1.9-7.1L3 11l7.1-1.9L12 2ZM19 19l.7 2.3L22 22l-2.3.7L19 25l-.7-2.3L16 22l2.3-.7L19 19Z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <div class="sidebar-scrim" id="sidebarScrim"></div>
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <div class="brand-row">
+          <button class="brand" type="button" data-page="home" aria-label="Margins home">
+            <span class="brand-mark"><svg class="icon"><use href="#i-book"></use></svg></span>
+            <span>margins<span class="brand-dot">.</span></span>
+          </button>
+          <button class="icon-button sidebar-close" type="button" id="closeSidebar" aria-label="Close menu"><svg class="icon"><use href="#i-close"></use></svg></button>
+        </div>
+
+        <div class="sidebar-body">
+          <div class="nav-label">YOUR SPACE</div>
+          <nav class="primary-nav" aria-label="Primary">
+            <button class="nav-item is-active" type="button" data-page="home"><svg class="icon"><use href="#i-home"></use></svg><span>Home</span></button>
+            <button class="nav-item" type="button" data-page="library"><svg class="icon"><use href="#i-library"></use></svg><span>My library</span></button>
+            <button class="nav-item" type="button" data-page="discover"><svg class="icon"><use href="#i-compass"></use></svg><span>Discover</span></button>
+            <button class="nav-item" type="button" data-page="goal"><svg class="icon"><use href="#i-target"></use></svg><span>Reading goal</span></button>
+          </nav>
+
+          <div class="sidebar-divider"></div>
+          <div class="nav-label shelves-label">MY SHELVES <button class="tiny-add" type="button" data-page="library" aria-label="View shelves"><svg class="icon"><use href="#i-plus"></use></svg></button></div>
+          <nav class="shelf-nav" aria-label="Shelves">
+            <button class="shelf-item" type="button" data-shelf="want"><span class="shelf-dot dot-want"></span><span>Want to read</span><span class="shelf-count" id="wantCount">0</span></button>
+            <button class="shelf-item" type="button" data-shelf="reading"><span class="shelf-dot dot-reading"></span><span>Currently reading</span><span class="shelf-count" id="readingCount">0</span></button>
+            <button class="shelf-item" type="button" data-shelf="read"><span class="shelf-dot dot-read"></span><span>Read</span><span class="shelf-count" id="readCount">0</span></button>
+          </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-quote"><span class="quote-mark">“</span><p>We read to know we are not alone.</p><span>— C. S. Lewis</span></div>
+          <button class="sidebar-profile" type="button" id="profileButton"><span class="avatar avatar-main">OL</span><span><strong>Olivia Lee</strong><small>My reading space</small></span><svg class="icon"><use href="#i-chevron"></use></svg></button>
+        </div>
+      </aside>
+
+      <div class="main-shell">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="icon-button mobile-menu" type="button" id="openSidebar" aria-label="Open menu" aria-expanded="false"><svg class="icon"><use href="#i-menu"></use></svg></button>
+            <div class="breadcrumb"><span>YOUR SPACE</span><svg class="icon"><use href="#i-chevron"></use></svg><strong id="breadcrumbCurrent">Home</strong></div>
+          </div>
+          <div class="topbar-actions">
+            <label class="search-field"><svg class="icon"><use href="#i-search"></use></svg><input id="searchInput" type="search" placeholder="Search books or authors" autocomplete="off" aria-label="Search books or authors"/><kbd>/</kbd></label>
+            <div class="notification-wrap">
+              <button class="icon-button notification-button" type="button" id="notificationButton" aria-label="Notifications" aria-expanded="false"><svg class="icon"><use href="#i-bell"></use></svg><span class="notification-dot"></span></button>
+              <div class="notification-panel" id="notificationPanel" hidden><strong>Notifications</strong><p>Your week in reading is looking good. Keep the pages turning!</p><p>You’re 3 books ahead of last year’s pace.</p></div>
+            </div>
+            <span class="topbar-separator"></span>
+            <button class="topbar-avatar" type="button" id="topProfileButton" aria-label="Olivia Lee profile">OL</button>
+          </div>
+        </header>
+
+        <div class="workspace" id="workspace">
+          <main class="content" id="pageContent" aria-live="polite"></main>
+          <aside class="right-rail" id="rightRail" aria-label="Reading overview"></aside>
+        </div>
+      </div>
+    </div>
+
+    <dialog class="modal" id="bookDialog" aria-labelledby="bookDialogTitle"><div id="bookDialogContent"></div></dialog>
+    <dialog class="modal small-modal" id="progressDialog" aria-labelledby="progressDialogTitle">
+      <form method="dialog" class="modal-inner" id="progressForm">
+        <button class="modal-close icon-button" type="button" data-close-dialog aria-label="Close"><svg class="icon"><use href="#i-close"></use></svg></button>
+        <span class="modal-eyebrow">CURRENTLY READING</span>
+        <h2 id="progressDialogTitle">Update your progress</h2>
+        <p class="modal-copy">A few more pages is always worth celebrating.</p>
+        <label class="form-label" for="pagesInput">Page reached</label>
+        <div class="progress-input-row"><input id="pagesInput" name="pages" type="number" min="0" max="300" inputmode="numeric" required /><span>of 300 pages</span></div>
+        <button class="button button-dark modal-submit" type="submit">Save progress <svg class="icon"><use href="#i-arrow"></use></svg></button>
+      </form>
+    </dialog>
+    <dialog class="modal small-modal" id="goalDialog" aria-labelledby="goalDialogTitle">
+      <form method="dialog" class="modal-inner" id="goalForm">
+        <button class="modal-close icon-button" type="button" data-close-dialog aria-label="Close"><svg class="icon"><use href="#i-close"></use></svg></button>
+        <span class="modal-eyebrow">2026 READING CHALLENGE</span>
+        <h2 id="goalDialogTitle">Set your reading goal</h2>
+        <p class="modal-copy">Pick a number that feels good for your year.</p>
+        <label class="form-label" for="goalInput">Books this year</label>
+        <div class="goal-input-row"><button class="step-button" type="button" id="decreaseGoal" aria-label="Decrease goal"><svg class="icon"><use href="#i-minus"></use></svg></button><input id="goalInput" name="goal" type="number" min="1" max="200" inputmode="numeric" required /><button class="step-button" type="button" id="increaseGoal" aria-label="Increase goal"><svg class="icon"><use href="#i-plus"></use></svg></button></div>
+        <button class="button button-dark modal-submit" type="submit">Save goal <svg class="icon"><use href="#i-arrow"></use></svg></button>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
