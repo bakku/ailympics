@@ -23,3 +23,4 @@ The prompt leaves the feature set and visual direction open so each model's choi
 | OpenCode Go / GLM 5.3 Flash (`max`) | [Shelfd frontend](opencode-go-glm-5.3-flash/) |
 | OpenCode Go / GLM 5.3 (`max`) | [Bookworm frontend](opencode-go-glm-5.3/) |
 | OpenCode Go / MiMo v2.6 Pro (`xhigh`) | [The Midnight Stacks frontend](opencode-go-mimo-v2.6-pro/) |
+| OpenCode Go / MiMo v2.6 Flash (`xhigh`) | [Shelfmark frontend](opencode-go-mimo-v2.6-flash/) |
