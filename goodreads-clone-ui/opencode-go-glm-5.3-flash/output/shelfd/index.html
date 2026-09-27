@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shelfd — Your books, self-hosted</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" data-page="home" data-nav>
+        <span class="brand-glyph" aria-hidden="true">▮▮</span> shelfd<span class="brand-dot">.</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#" data-page="home" data-nav class="is-active">Home</a>
+        <a href="#" data-page="library" data-nav>My Library</a>
+        <a href="#" data-page="browse" data-nav>Browse</a>
+        <a href="#" data-page="stats" data-nav>Stats</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-toggle" data-open-search aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="kbd-hint">⌘K</span>
+        </button>
+        <div class="avatar-wrap">
+          <button class="avatar" id="avatarBtn" aria-haspopup="true" aria-expanded="false">
+            <span>AD</span>
+          </button>
+          <div class="dropdown" id="avatarMenu" role="menu">
+            <div class="dropdown-section">
+              <div class="dropdown-title">ada@syncbox.local</div>
+              <a href="#" role="menuitem" data-menu-toast="Settings saved" data-toast="Opening settings…">Settings</a>
+              <a href="#" role="menuitem" data-toast="Export queued — 247 books as CSV">Export library</a>
+            </div>
+            <div class="dropdown-section">
+              <a href="#" role="menuitem" data-toast="Sign out coming soon">Sign out</a>
+            </div>
+          </div>
+        </div>
+        <button class="icon-btn menu-toggle" id="menuBtn" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#" data-page="home" data-nav>Home</a>
+    <a href="#" data-page="library" data-nav>My Library</a>
+    <a href="#" data-page="browse" data-nav>Browse</a>
+    <a href="#" data-page="stats" data-nav>Stats</a>
+  </div>
+
+  <main id="main" tabindex="-1"></main>
+
+  <div class="cmdk-backdrop" id="cmdk" hidden>
+    <div class="cmdk" role="dialog" aria-label="Search your library">
+      <div class="cmdk-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="cmdkInput" type="text" placeholder="Search books, authors…" autocomplete="off" />
+        <span class="cmdk-esc">esc</span>
+      </div>
+      <div class="cmdk-results" id="cmdkResults"></div>
+      <div class="cmdk-foot">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+        <span><kbd>↵</kbd> open</span>
+        <span><kbd>esc</kbd> close</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-region" id="toasts" aria-live="polite"></div>
+
+  <footer class="app-footer">
+    <div class="container footer-inner">
+      <span>Shelfd v0.4.2 — self-hosted</span>
+      <span class="footer-sep">·</span>
+      <button class="footer-link" data-toast="Add-book form is on the roadmap">+ Add book</button>
+      <span class="footer-sep">·</span>
+      <span class="footer-mono">sync: 2 min ago</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
