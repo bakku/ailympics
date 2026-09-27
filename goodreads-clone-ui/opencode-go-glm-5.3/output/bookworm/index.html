@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bookworm · Your reading home</title>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('bookworm-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){document.documentElement.dataset.theme='light'}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b45f2d'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23fffdf8' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-btn menu-btn" data-action="toggle-drawer" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <a class="logo" href="#/home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.5 4.9 8 4 5 4v13c3 0 5.5.9 7 2.5C13.5 17.9 16 17 19 17V4c-3 0-5.5.9-7 2.5z"/><path d="M12 6.5V20"/></svg>
+      <span>Bookworm</span>
+    </a>
+    <div class="global-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      <input id="global-search" type="search" placeholder="Search books &amp; authors…" autocomplete="off">
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-btn" data-action="toggle-theme" aria-label="Toggle theme"></button>
+      <div class="avatar-wrap">
+        <button class="avatar" data-action="toggle-avatar" aria-haspopup="true">AC</button>
+        <div class="avatar-menu" id="avatar-menu" hidden>
+          <p class="avatar-menu-head"><strong>Avery Cole</strong><span class="muted">@avery</span></p>
+          <button data-action="mock">Profile</button>
+          <button data-action="mock">Settings</button>
+          <button data-action="mock">Sign out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation"></aside>
+  <main id="main"></main>
+</div>
+<div class="drawer-backdrop" data-action="close-drawer"></div>
+<footer class="site-footer"><p>Bookworm · a self-hosted reading tracker. Everything here is mocked and stays in your browser.</p></footer>
+<div id="modal-root"></div>
+<div id="toast-root" aria-live="polite"></div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

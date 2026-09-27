@@ -21,3 +21,4 @@ The prompt leaves the feature set and visual direction open so each model's choi
 | OpenAI / GPT-6 Sol (`max`) | [Margins frontend](openai-gpt-6-sol/) |
 | OpenCode Go / LongCat 2.5 Preview Free (`high`) | [BookNest frontend](opencode-go-longcat-2.5-preview-free/) |
 | OpenCode Go / GLM 5.3 Flash (`max`) | [Shelfd frontend](opencode-go-glm-5.3-flash/) |
+| OpenCode Go / GLM 5.3 (`max`) | [Bookworm frontend](opencode-go-glm-5.3/) |
