@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shelfmark — your self-hosted reading life</title>
+  <meta name="description" content="Shelfmark is a self-hosted Goodreads clone. Track books, shelves, reviews and reading challenges." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%235a3d2b'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='%23f4e9dc' font-family='Georgia,serif'>S</text></svg>" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="#/home" aria-label="Shelfmark home">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">Shelfmark</span>
+      </a>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <a href="#/home" data-nav="home">Home</a>
+        <a href="#/my-books" data-nav="my-books">My Books</a>
+        <a href="#/discover" data-nav="discover">Discover</a>
+        <a href="#/friends" data-nav="friends">Friends</a>
+        <a href="#/challenge" data-nav="challenge">Challenge</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search books" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </button>
+        <button class="icon-btn desktop-only" aria-label="Notifications" id="notifBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 1112 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2.5 2.5 0 004 0"/></svg>
+          <span class="dot" aria-hidden="true"></span>
+        </button>
+        <a class="avatar" href="#/profile" title="Ada Whitfield">AW</a>
+        <button class="icon-btn menu-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="search-bar" id="searchBar" hidden>
+      <div class="search-inner">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Search by title, author or ISBN…" autocomplete="off" aria-label="Search books" />
+        <kbd class="desktop-only">/</kbd>
+        <button class="icon-btn" id="searchClose" aria-label="Close search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="#/home" data-nav="home">Home</a>
+      <a href="#/my-books" data-nav="my-books">My Books</a>
+      <a href="#/discover" data-nav="discover">Discover</a>
+      <a href="#/friends" data-nav="friends">Friends</a>
+      <a href="#/challenge" data-nav="challenge">Challenge</a>
+      <a href="#/profile" data-nav="profile">Profile</a>
+      <div class="mobile-menu-foot">
+        <button class="btn btn-ghost" id="themeToggle">Toggle dark mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="main" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="brand small"><span class="brand-mark">S</span><span class="brand-name">Shelfmark</span></div>
+        <p class="muted">Self-hosted reading tracker. Everything on this page is mocked data.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Explore</h4>
+          <a href="#/discover">Discover</a>
+          <a href="#/challenge">Reading challenge</a>
+          <a href="#/friends">Friends</a>
+        </div>
+        <div>
+          <h4>Shelves</h4>
+          <a href="#/my-books?shelf=read">Read</a>
+          <a href="#/my-books?shelf=reading">Currently reading</a>
+          <a href="#/my-books?shelf=want">Want to read</a>
+        </div>
+        <div>
+          <h4>Instance</h4>
+          <a href="#/home">Status: healthy</a>
+          <a href="#/home">v0.4.2</a>
+          <a href="#/home">Admin</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-base muted">© 2026 Shelfmark · MIT licensed · No trackers</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
