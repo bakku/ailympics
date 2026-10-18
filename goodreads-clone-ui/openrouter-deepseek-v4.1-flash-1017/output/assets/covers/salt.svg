@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+<title>Salt &amp; Smoke</title>
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .09"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+    <stop offset=".018" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".06" stop-color="#fff" stop-opacity=".05"/>
+    <stop offset=".12" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="400" height="600" fill="#c7d8d4"/>
+<circle cx="323" cy="116" r="42" fill="#df744d"/>
+<path d="M0 370 C90 325 135 395 215 348 C285 307 345 325 400 294 V600 H0Z" fill="#335e5a"/>
+<path d="M0 414 C87 365 154 441 238 390 C302 351 357 369 400 350 V600 H0Z" fill="#e9e3d3"/>
+<path d="M0 470 C99 429 173 493 255 451 C318 419 364 437 400 416 V600 H0Z" fill="#afcbc4"/>
+<path d="M0 518 C92 486 183 539 268 500 C326 473 367 479 400 464 V600 H0Z" fill="#244c49"/>
+<g fill="none" stroke="#f7f1e3" stroke-width="1.5" opacity=".6">
+  <path d="M-20 545c70-28 116 30 177 5s90-32 139-8 89 4 128-14"/>
+  <path d="M-15 567c70-28 116 30 177 5s90-32 139-8 89 4 128-14"/>
+</g>
+<text x="40" y="72" fill="#244c49" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="10" letter-spacing="2.6">A MEMOIR OF TIDES</text>
+<text x="38" y="232" fill="#183d3a" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="700">
+  <tspan x="38" y="210">Salt</tspan>
+  <tspan x="38" y="270" font-style="italic" font-weight="400">&amp; Smoke</tspan>
+</text>
+<line x1="41" y1="292" x2="112" y2="292" stroke="#df744d" stroke-width="3"/>
+<text x="41" y="588" fill="#e9e3d3" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="12" letter-spacing="2.3">NIAMH CALLOWAY</text>
+
+<rect width="400" height="600" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+<rect width="400" height="600" fill="url(#spine)"/>
+</svg>

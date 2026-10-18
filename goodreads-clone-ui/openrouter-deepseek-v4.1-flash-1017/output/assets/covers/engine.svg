@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+<title>The Quiet Engine</title>
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .09"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+    <stop offset=".018" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".06" stop-color="#fff" stop-opacity=".05"/>
+    <stop offset=".12" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="400" height="600" fill="#e2c35f"/>
+<g fill="none" stroke="#1e2925" stroke-width="1.2" opacity=".85">
+  <circle cx="200" cy="284" r="118"/><circle cx="200" cy="284" r="94"/><circle cx="200" cy="284" r="61"/>
+  <circle cx="200" cy="284" r="15" fill="#1e2925"/>
+  <path d="M200 166v-28M200 402v28M82 284H54M318 284h28M117 201l-20-20M303 387l20 20M283 201l20-20M97 387l-20 20"/>
+  <path d="M200 190v188M106 284h188M134 218l132 132M266 218L134 350"/>
+</g>
+<g fill="#1e2925">
+  <circle cx="200" cy="284" r="6"/><rect x="193" y="225" width="14" height="26" rx="7"/><rect x="193" y="317" width="14" height="26" rx="7"/><rect x="141" y="277" width="26" height="14" rx="7"/><rect x="233" y="277" width="26" height="14" rx="7"/>
+</g>
+<g fill="none" stroke="#a44732" stroke-width="1.2">
+  <path d="M-20 410h440M-20 427h440M-20 444h440"/>
+</g>
+<text x="40" y="65" fill="#1e2925" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="10" letter-spacing="2.8">ON WORK, ATTENTION &amp; THE GOOD LIFE</text>
+<text x="39" y="514" fill="#1e2925" font-family="Georgia, 'Times New Roman', serif" font-size="45" letter-spacing="-.5">
+  <tspan x="39" y="511">The Quiet</tspan><tspan x="39" y="558" font-style="italic">Engine</tspan>
+</text>
+<text x="40" y="586" fill="#3e4435" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="2.4">FELIX ADLER</text>
+
+<rect width="400" height="600" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+<rect width="400" height="600" fill="url(#spine)"/>
+</svg>

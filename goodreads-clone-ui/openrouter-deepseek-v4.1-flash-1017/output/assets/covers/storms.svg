@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+<title>A Field Guide to Storms</title>
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .09"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+    <stop offset=".018" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".06" stop-color="#fff" stop-opacity=".05"/>
+    <stop offset=".12" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="400" height="600" fill="#dce7e6"/>
+<rect x="20" y="20" width="360" height="560" fill="none" stroke="#2e4a51" stroke-width="1" opacity=".45"/>
+<g fill="none" stroke="#2e4a51" stroke-width="1" opacity=".18">
+  <path d="M20 130H380M20 260H380M20 390H380M20 520H380M90 20V580M180 20V580M270 20V580M360 20V580"/>
+</g>
+<g opacity=".88">
+  <path d="M47 232c-10-24 4-47 29-50 10-29 52-37 73-14 28-17 61-2 64 23 23 3 36 23 28 41Z" fill="#2c454d"/>
+  <path d="M222 152c-8-20 6-40 27-41 13-23 47-23 59-3 25-1 38 25 27 44Z" fill="#7f9b99"/>
+  <path d="M104 323c-8-19 3-37 24-40 11-24 44-27 57-7 22 1 34 21 26 40Z" fill="#95aba7"/>
+  <path d="M61 397c8 25 30 36 54 25M64 462c-2 21 12 38 33 44M284 358c7 23-2 42-21 51M256 442c19 4 31 19 29 37" stroke="#2e4a51" stroke-width="2"/>
+  <path d="M122 357l-20 41h24l-14 36 44-52h-25l18-25Z" fill="#d69744"/>
+  <path d="M302 173l-15 30h18l-11 27 33-39h-19l14-18Z" fill="#d69744"/>
+</g>
+<text x="47" y="78" fill="#2e4a51" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="9" letter-spacing="2.3">VOLUME NO. 01 · A BEGINNER'S COMPENDIUM</text>
+<text x="48" y="532" fill="#203b42" font-family="Georgia, 'Times New Roman', serif" font-size="42" letter-spacing="-.4">
+  <tspan x="48" y="528">A Field Guide</tspan><tspan x="48" y="571" font-style="italic">to Storms</tspan>
+</text>
+<text x="300" y="565" fill="#2e4a51" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="2">THEO MERCER</text>
+
+<rect width="400" height="600" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+<rect width="400" height="600" fill="url(#spine)"/>
+</svg>

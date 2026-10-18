@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+<title>The Last Archive</title>
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .09"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+    <stop offset=".018" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".06" stop-color="#fff" stop-opacity=".05"/>
+    <stop offset=".12" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="400" height="600" fill="#59282c"/>
+<rect x="24" y="24" width="352" height="552" fill="none" stroke="#dca96a" stroke-width="1" opacity=".65"/>
+<path d="M64 420V215c0-73 57-126 136-126s136 53 136 126v205Z" fill="#77383a"/>
+<path d="M91 420V227c0-57 47-104 109-104s109 47 109 104v193Z" fill="#c38964" opacity=".22"/>
+<g fill="none" stroke="#e3b77c" stroke-width="1.3">
+  <path d="M128 420V256h145v164M128 296h145M128 336h145M128 376h145M173 256v164M223 256v164"/>
+</g>
+<g fill="#e6c08d">
+  <rect x="153" y="171" width="94" height="18" fill-opacity=".92"/>
+  <rect x="170" y="193" width="60" height="6" opacity=".55"/>
+</g>
+<circle cx="200" cy="150" r="12" fill="none" stroke="#e6c08d" stroke-width="1.5"/>
+<path d="M34 462h332M75 483h250M112 500h176" stroke="#dca96a" stroke-width=".8" opacity=".45"/>
+<text x="42" y="65" fill="#e6c08d" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="9" letter-spacing="3">A NOVEL OF UNQUIET THINGS</text>
+<text x="42" y="531" fill="#f4e5d1" font-family="Georgia, 'Times New Roman', serif" font-size="48" letter-spacing="-.5">
+  <tspan x="42" y="527">The Last</tspan><tspan x="42" y="574" font-style="italic">Archive</tspan>
+</text>
+<text x="286" y="587" fill="#e6c08d" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="2.2">JUNE OKAFOR</text>
+
+<rect width="400" height="600" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+<rect width="400" height="600" fill="url(#spine)"/>
+</svg>
