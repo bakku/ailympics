@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+<title>Under the Falcon's Wing</title>
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .09"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+    <stop offset=".018" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".06" stop-color="#fff" stop-opacity=".05"/>
+    <stop offset=".12" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="400" height="600" fill="#18382f"/>
+<circle cx="200" cy="285" r="143" fill="none" stroke="#c6a565" stroke-width="1.2" opacity=".55"/>
+<circle cx="200" cy="285" r="123" fill="none" stroke="#c6a565" stroke-width=".6" opacity=".4"/>
+<g fill="none" stroke="#d4b77d" stroke-width="1.7">
+  <path d="M200 278c-38-89-124-118-156-90 43 6 77 38 91 82-30-24-65-30-92-16 43 13 72 38 91 70"/>
+  <path d="M200 278c38-89 124-118 156-90-43 6-77 38-91 82 30-24 65-30 92-16-43 13-72 38-91 70"/>
+  <path d="M200 280v104M178 335l22 49 22-49M185 309l15 24 15-24"/>
+</g>
+<g fill="#d4b77d">
+  <circle cx="82" cy="93" r="2"/><circle cx="283" cy="49" r="1.5"/><circle cx="342" cy="116" r="2.2"/><circle cx="362" cy="455" r="1.7"/>
+  <path d="M64 195l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5Z"/>
+</g>
+<text x="43" y="61" fill="#d4b77d" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="10" letter-spacing="3">BOOK ONE OF THE HALCYON CYCLE</text>
+<line x1="43" y1="78" x2="357" y2="78" stroke="#d4b77d" stroke-width=".8" opacity=".6"/>
+<text x="42" y="491" fill="#f0e2bf" font-family="Georgia, 'Times New Roman', serif" font-size="42" letter-spacing="-.3">
+  <tspan x="42" y="489">Under the</tspan><tspan x="42" y="535" font-style="italic">Falcon's Wing</tspan>
+</text>
+<text x="43" y="575" fill="#b9c6b6" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="2.5">ADRIEN BLACKWOOD</text>
+
+<rect width="400" height="600" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+<rect width="400" height="600" fill="url(#spine)"/>
+</svg>

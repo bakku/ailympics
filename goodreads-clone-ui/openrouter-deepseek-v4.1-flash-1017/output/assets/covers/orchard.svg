@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+<title>The Orchard at Midnight</title>
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .09"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+    <stop offset=".018" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".06" stop-color="#fff" stop-opacity=".05"/>
+    <stop offset=".12" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="400" height="600" fill="#1d2a3e"/>
+<circle cx="305" cy="135" r="56" fill="#f0bd72"/>
+<circle cx="288" cy="120" r="56" fill="#1d2a3e" opacity=".32"/>
+<path d="M0 390 C80 345 145 370 210 345 C280 320 340 340 400 310 V600 H0Z" fill="#2e3c46"/>
+<path d="M0 435 C80 395 160 430 240 400 C310 372 365 395 400 380 V600 H0Z" fill="#24332f"/>
+<g fill="none" stroke="#d47b4b" stroke-width="2" opacity=".9">
+  <path d="M98 445 V350"/><path d="M171 430 V320"/><path d="M323 430 V345"/>
+  <path d="M98 350c-35-35-38-74-25-100M98 350c28-28 55-32 76-29M171 320c-25-27-37-61-29-90M171 320c26-33 61-44 86-41M323 345c-24-27-30-55-21-78M323 345c25-31 47-41 67-39"/>
+</g>
+<g fill="#d4784b">
+  <circle cx="71" cy="239" r="23"/><circle cx="106" cy="269" r="30"/><circle cx="138" cy="325" r="24"/>
+  <circle cx="201" cy="239" r="28"/><circle cx="241" cy="280" r="25"/><circle cx="279" cy="310" r="21"/>
+  <circle cx="336" cy="255" r="20"/><circle cx="365" cy="292" r="25"/>
+</g>
+<g fill="#f3c77d" opacity=".8">
+  <circle cx="88" cy="257" r="2"/><circle cx="123" cy="294" r="2.5"/><circle cx="184" cy="257" r="2"/><circle cx="236" cy="298" r="2"/><circle cx="347" cy="273" r="2"/>
+</g>
+<text x="46" y="58" fill="#efdfc3" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="3">A NOVEL</text>
+<line x1="46" y1="76" x2="95" y2="76" stroke="#d47b4b" stroke-width="2"/>
+<text x="46" y="492" fill="#f5ead6" font-family="Georgia, 'Times New Roman', serif" font-size="44" letter-spacing="-.8">
+  <tspan x="46" y="492">The Orchard</tspan>
+  <tspan x="46" y="537" font-style="italic">at Midnight</tspan>
+</text>
+<text x="47" y="572" fill="#d6c8b0" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="12" letter-spacing="2.3">ELENA VOSS</text>
+
+<rect width="400" height="600" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+<rect width="400" height="600" fill="url(#spine)"/>
+</svg>

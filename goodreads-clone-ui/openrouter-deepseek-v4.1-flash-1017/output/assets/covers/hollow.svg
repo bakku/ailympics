@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+<title>Hollow Tide</title>
+<defs>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 .09"/></feComponentTransfer>
+  </filter>
+  <linearGradient id="spine" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#000" stop-opacity=".18"/>
+    <stop offset=".018" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".06" stop-color="#fff" stop-opacity=".05"/>
+    <stop offset=".12" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="400" height="600" fill="#0d3335"/>
+<circle cx="209" cy="241" r="112" fill="#e9e0c9"/>
+<circle cx="245" cy="215" r="112" fill="#0d3335"/>
+<path d="M0 330 C56 291 93 311 125 344 C164 385 198 399 242 382 C287 365 319 327 349 304 C371 287 387 287 400 293 V600 H0Z" fill="#174749"/>
+<path d="M0 387 C64 354 113 379 153 416 C188 448 221 451 256 433 C300 410 337 386 400 403 V600 H0Z" fill="#0d3335"/>
+<g fill="none" stroke="#c6a887" stroke-width="1.1" opacity=".65">
+  <path d="M41 458c58-27 109 17 163-4s86-30 153-2"/>
+  <path d="M52 478c50-18 93 12 139-1s80-21 137-2"/>
+</g>
+<g fill="none" stroke="#8d523f" stroke-width="1.5" opacity=".8">
+  <path d="M0 426c41-17 75-2 104 18M400 344c-21-7-38 0-54 13"/>
+</g>
+<text x="41" y="65" fill="#c4aa89" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="9" letter-spacing="3">A GOTHIC TALE OF THE SEA</text>
+<text x="40" y="499" fill="#eee1c7" font-family="Georgia, 'Times New Roman', serif" font-size="57" letter-spacing="-1">
+  <tspan x="40" y="498">Hollow</tspan><tspan x="40" y="549" font-style="italic">Tide</tspan>
+</text>
+<text x="41" y="585" fill="#b5a789" font-family="'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" font-size="11" letter-spacing="2.4">MAREN HALE</text>
+
+<rect width="400" height="600" filter="url(#grain)" opacity=".55" style="mix-blend-mode:overlay"/>
+<rect width="400" height="600" fill="url(#spine)"/>
+</svg>
